@@ -73,7 +73,7 @@ Uses gunicorn + nginx.
     ```
 
     Test it out at [http://localhost](http://localhost). No mounted folders. To apply changes, the image must be re-built.
-### For full deployment you can follow this [tutorials](https://www.youtube.com/watch?v=3_ZJWlf25bY)
+### For full deployment you can follow this [tutorial](https://www.youtube.com/watch?v=3_ZJWlf25bY).
 ## Useful Tips
 
 ### API Specification Sheet
