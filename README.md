@@ -56,7 +56,15 @@ docker-compose run web /usr/local/bin/python manage.py createsuperuser
 Uses gunicorn + nginx.
 
 1. Rename *.env.sample* to *.env.prod* and *.env.db.sample* to *.env.prod.db* Update the environment variables.
-2. Build the images and run the containers:
+2. Login to the EC2 with SSH
+
+    ```sh
+    ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
+    ```
+3. Then Install git on the server. For reference vist [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/](here)
+4. Clone your git repository in EC2
+5. Install Docker and Docker composer in EC2. For reference vist [https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Docker-and-docker-compose-on-Ubuntu/](here)
+5. Build the images and run the containers:
 
     ```sh
     docker-compose -f docker-compose.prod.yml up -d --build
