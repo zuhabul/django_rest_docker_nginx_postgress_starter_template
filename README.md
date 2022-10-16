@@ -1,6 +1,6 @@
 # Server REST Backend Template
 This is a Django Rest Backend Server quick-start template that is configured with the followings:
-*Docker, *Nginx *Gunicorn *AWS S3 *PostgressSQL *Django API Tests basic setup with examples *Django REST API basic setup with examples *API Documentation setup with Swagger and Redoc. *And more..
+*Docker, *Nginx *Gunicorn *AWS S3 *PostgressSQL *Django API Tests basic setup with examples *Django REST API basic setup with examples *API Documentation setup with Swagger and Redoc, *Basic Auth API Implementation *And more..
 
 ## Requirements
 
