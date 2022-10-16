@@ -172,5 +172,5 @@ top
 docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
 ```
 
-### To know more about Docker Compose Basic Commands
-Please visit [here](https://gist.github.com/arsho/6249e3f0fc1d966d115c34718e1a8a0a).
+## To know more about Docker Compose Basic Commands
+Please visit [here](https://gist.github.com/zuhabul/9849069263750e8ca606471b2ddaf9ca).
