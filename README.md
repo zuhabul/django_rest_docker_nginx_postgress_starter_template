@@ -49,7 +49,7 @@ docker-compose up
 docker-compose run web /usr/local/bin/python manage.py createsuperuser
 ```
 
-### Production
+## Production
 
 Uses gunicorn + nginx.
 
@@ -63,6 +63,7 @@ Uses gunicorn + nginx.
     ```
 
     Test it out at [http://localhost](http://localhost). No mounted folders. To apply changes, the image must be re-built.
+## Useful Tips
 
 ### API Specification Sheet
 
