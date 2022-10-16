@@ -91,9 +91,9 @@ Uses gunicorn + nginx.
 ### Docker Clean Everything
 
 1. Prune everything including volumes:
-        ```sh
-             docker-compose -f docker-compose.prod.yml down -v
-             docker system prune --volumes -f
+```sh
+     docker-compose -f docker-compose.prod.yml down -v
+     docker system prune --volumes -f
 
 ### Docker Clean step by step
 
