@@ -61,9 +61,9 @@ Uses gunicorn + nginx.
     ```sh
     ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
     ```
-3. Then Install git on the server. For reference vist [here]([here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/))
+3. Then Install git on the server. For reference vist [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/)
 4. Clone your git repository in EC2
-5. Install Docker and Docker composer in EC2. For reference vist [here]([here](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Docker-and-docker-compose-on-Ubuntu/))
+5. Install Docker and Docker composer in EC2. For reference vist [here](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Docker-and-docker-compose-on-Ubuntu/)
 5. Build the images and run the containers:
 
     ```sh
