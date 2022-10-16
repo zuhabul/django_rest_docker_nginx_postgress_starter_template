@@ -77,25 +77,25 @@ Uses gunicorn + nginx.
 1. Run the following commands:
 
 ```sh
-    docker-compose -f docker-compose.prod.yml down -v
+docker-compose -f docker-compose.prod.yml down -v
 
-    docker-compose -f docker-compose.prod.yml up -d --build
+docker-compose -f docker-compose.prod.yml up -d --build
 
-    docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
+docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
 
-    docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 
-    docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
+docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
 
-    $ docker-compose -f docker-compose.prod.yml up
+docker-compose -f docker-compose.prod.yml up
 ```
 
 ### Docker Clean Everything
 
 Prune everything including volumes:
 ```sh
-     docker-compose -f docker-compose.prod.yml down -v
-     docker system prune --volumes -f
+ docker-compose -f docker-compose.prod.yml down -v
+ docker system prune --volumes -f
  ```
 
 ### Docker Clean step by step
@@ -128,21 +128,21 @@ Prune everything including volumes:
 
 ### Run the following commands:
 ```sh
-    ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
+ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
 
-    cd project_dir
+cd project_dir
 
-    git pull
+git pull
 
-    docker-compose -f docker-compose.prod.yml down -v
+docker-compose -f docker-compose.prod.yml down -v
 
-    docker-compose -f docker-compose.prod.yml up -d --build
+docker-compose -f docker-compose.prod.yml up -d --build
 
-    docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 
-    docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
+docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
 
-    docker-compose -f docker-compose.prod.yml up -d
+docker-compose -f docker-compose.prod.yml up -d
 ```
 ### If database needs to be deleted, run:
 ```sh
