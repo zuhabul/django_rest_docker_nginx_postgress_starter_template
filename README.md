@@ -61,9 +61,9 @@ Uses gunicorn + nginx.
     ```sh
     ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
     ```
-3. Then Install git on the server. For reference vist [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/](here)
+3. Then Install git on the server. For reference vist [here]([here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/))
 4. Clone your git repository in EC2
-5. Install Docker and Docker composer in EC2. For reference vist [https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Docker-and-docker-compose-on-Ubuntu/](here)
+5. Install Docker and Docker composer in EC2. For reference vist [here]([here](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Docker-and-docker-compose-on-Ubuntu/))
 5. Build the images and run the containers:
 
     ```sh
@@ -73,6 +73,7 @@ Uses gunicorn + nginx.
     ```
 
     Test it out at [http://localhost](http://localhost). No mounted folders. To apply changes, the image must be re-built.
+### For full deployment you can follow this [tutorials](https://www.youtube.com/watch?v=3_ZJWlf25bY)
 ## Useful Tips
 
 ### API Specification Sheet
@@ -170,3 +171,6 @@ top
 ```sh
 docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
 ```
+
+### To know more about Docker Compose Basic Commands
+Please visit [here](https://gist.github.com/arsho/6249e3f0fc1d966d115c34718e1a8a0a).
