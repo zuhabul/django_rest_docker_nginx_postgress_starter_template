@@ -94,10 +94,12 @@ Uses gunicorn + nginx.
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
      docker system prune --volumes -f
+     ```
 
 ### Docker Clean step by step
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
+     ```
 
 # 1. To remove all images which are not used by existing containers:
 
