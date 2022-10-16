@@ -75,18 +75,18 @@ Uses gunicorn + nginx.
 
 1. Run the following commands:
 
-    ```sh
-        docker-compose -f docker-compose.prod.yml down -v
+```sh
+    docker-compose -f docker-compose.prod.yml down -v
 
-        docker-compose -f docker-compose.prod.yml up -d --build
+    docker-compose -f docker-compose.prod.yml up -d --build
 
-        docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
+    docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic
 
-        docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+    docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 
-        docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
+    docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
 
-        $ docker-compose -f docker-compose.prod.yml up
+    $ docker-compose -f docker-compose.prod.yml up
 
 ### Docker Clean Everything
 
@@ -94,12 +94,11 @@ Uses gunicorn + nginx.
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
      docker system prune --volumes -f
-     ```
+ ```
 
 ### Docker Clean step by step
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
-     ```
 
 # 1. To remove all images which are not used by existing containers:
 
@@ -120,37 +119,42 @@ Uses gunicorn + nginx.
 # 5. Prune networks:
 
      docker network prune
+```
+## Re-deploy the app in the EC2
 
-### Re-deploy the app in the EC2
+### Run the following commands:
+```sh
+    ssh -i ~/.ssh/key-eaf.pem ec2-user@15.206.117.163
 
-# Run the following commands:
+    cd eaf-backend
 
-        ssh -i ~/.ssh/key-eaf.pem ec2-user@15.206.117.163
+    git pull
 
-        cd eaf-backend
+    docker-compose -f docker-compose.prod.yml down -v
 
-        git pull
+    docker-compose -f docker-compose.prod.yml up -d --build
 
-        docker-compose -f docker-compose.prod.yml down -v
+    docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 
-        docker-compose -f docker-compose.prod.yml up -d --build
+    docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
 
-        docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+    docker-compose -f docker-compose.prod.yml up -d
+```
 
-        docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
+### If database needs to be deleted, run:
+```sh
 
-        docker-compose -f docker-compose.prod.yml up -d
+     docker-compose -f docker-compose.prod.yml exec web python manage.py flush --no-input
+```
 
-1. If database needs to be deleted, run:
-
-        docker-compose -f docker-compose.prod.yml exec web python manage.py flush --no-input
-
-1. To see running processes in the server:
-
-        top
+### To see running processes in the server:
+```sh
+     top
+```
 
 ### Disconnect current running server
 
 1. To kill docker-compose up -d, run:
-
-         docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
+```sh
+     docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
+```
