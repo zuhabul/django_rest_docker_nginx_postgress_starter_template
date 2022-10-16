@@ -87,10 +87,11 @@ Uses gunicorn + nginx.
     docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
 
     $ docker-compose -f docker-compose.prod.yml up
+```
 
 ### Docker Clean Everything
 
-1. Prune everything including volumes:
+Prune everything including volumes:
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
      docker system prune --volumes -f
@@ -98,25 +99,27 @@ Uses gunicorn + nginx.
 
 ### Docker Clean step by step
 ```sh
+# 1. Put doen the docker containers
+
      docker-compose -f docker-compose.prod.yml down -v
 
-# 1. To remove all images which are not used by existing containers:
+# 2. To remove all images which are not used by existing containers:
 
      docker image prune -a
 
-# 2. Prune containers:
+# 3. Prune containers:
 
      docker container prune
 
-# 3. Prune volumes:
+# 4. Prune volumes:
 
      docker volume prune
 
-# 4. Prune networks:
+# 5. Prune networks:
 
      docker network prune
 
-# 5. Prune networks:
+# 6. Prune networks:
 
      docker network prune
 ```
@@ -124,9 +127,9 @@ Uses gunicorn + nginx.
 
 ### Run the following commands:
 ```sh
-    ssh -i ~/.ssh/key-eaf.pem ec2-user@15.206.117.163
+    ssh -i ~/.ssh/key.pem ec2-user@15.206.177.161
 
-    cd eaf-backend
+    cd project_dir
 
     git pull
 
@@ -140,21 +143,19 @@ Uses gunicorn + nginx.
 
     docker-compose -f docker-compose.prod.yml up -d
 ```
-
 ### If database needs to be deleted, run:
 ```sh
-
-     docker-compose -f docker-compose.prod.yml exec web python manage.py flush --no-input
+docker-compose -f docker-compose.prod.yml exec web python manage.py flush --no-input
 ```
 
 ### To see running processes in the server:
 ```sh
-     top
+top
 ```
 
 ### Disconnect current running server
 
 1. To kill docker-compose up -d, run:
 ```sh
-     docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
+docker network disconnect -f eaf-backend_default eaf-backend_nginx_1
 ```
