@@ -96,33 +96,32 @@ Uses gunicorn + nginx.
      docker system prune --volumes -f
 
 ### Docker Clean step by step
-
 ```sh
      docker-compose -f docker-compose.prod.yml down -v
 
 # 1. To remove all images which are not used by existing containers:
 
-        docker image prune -a
+     docker image prune -a
 
 # 2. Prune containers:
 
-        docker container prune
+     docker container prune
 
 # 3. Prune volumes:
 
-        docker volume prune
+     docker volume prune
 
 # 4. Prune networks:
 
-        docker network prune
+     docker network prune
 
 # 5. Prune networks:
 
-        docker network prune
+     docker network prune
 
 ### Re-deploy the app in the EC2
 
-1. Run the following commands:
+# Run the following commands:
 
         ssh -i ~/.ssh/key-eaf.pem ec2-user@15.206.117.163
 
